@@ -1,17 +1,14 @@
 body {
   font-family: "Segoe UI", Tahoma, sans-serif;
-  background: #0d1a33; /* dashboard navy */
+  background-color: #0d1a33;
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+                    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-}
-
-.app-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 header {
