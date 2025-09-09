@@ -8,6 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
   botMsg.textContent = "Welcome to the MasTec AI Assistant. How can I help you today?";
   chatBox.appendChild(botMsg);
   conversationHistory.push({ role: "assistant", content: botMsg.textContent });
+
+  // ✅ Allow pressing Enter to send
+  const input = document.getElementById("user-input");
+  input.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
 });
 
 function sendMessage() {
