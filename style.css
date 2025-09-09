@@ -14,9 +14,12 @@ body {
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 #chat-box {
+  flex: 1;
   height: 300px;
   overflow-y: auto;
   border: 1px solid #ddd;
@@ -24,18 +27,42 @@ body {
   padding: 10px;
   margin-bottom: 10px;
   background: #fafafa;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
 }
 
 .message {
-  margin: 8px 0;
+  margin: 6px 0;
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  line-height: 1.4;
+  word-wrap: break-word;
 }
 
 .user {
-  text-align: right;
-  color: #1a73e8;
+  background: #1a73e8;
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
 }
 
 .bot {
-  text-align: left;
-  color: #222;
+  background: #e5e5ea;
+  color: #000;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+
+.input-area {
+  display: flex;
+  gap: 6px;
+}
+
+#user-input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
