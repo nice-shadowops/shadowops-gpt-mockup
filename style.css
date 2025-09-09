@@ -26,7 +26,7 @@ header img {
 }
 
 header h2 {
-  color: #ffffff; /* white for contrast */
+  color: #ffffff;
   font-size: 20px;
   margin: 0;
 }
@@ -41,33 +41,44 @@ header h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-top: 6px solid #1a2b4d; /* dashboard card blue accent bar */
+  border-top: 6px solid #1a2b4d; /* dashboard card blue */
 }
 
 #chat-box {
   flex-grow: 1;
   overflow-y: auto;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .message {
-  margin: 6px 0;
+  margin: 4px 0;
   padding: 8px 12px;
-  border-radius: 8px;
-  max-width: 80%;
+  border-radius: 12px;
+  max-width: 75%;
+  word-wrap: break-word;
 }
 
+/* User messages (right side) */
 .message.user {
-  background: #004080; /* mastec blue */
+  background: #004080; /* MasTec blue */
   color: #fff;
   align-self: flex-end;
   text-align: right;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 12px;
 }
 
+/* Bot messages (left side) */
 .message.bot {
-  background: #e6eaf2; /* light slate blue tone instead of gray */
+  background: #e6eaf2; /* light blue/gray */
   color: #111;
   align-self: flex-start;
+  text-align: left;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 12px;
 }
 
 .input-area {
@@ -92,7 +103,7 @@ header h2 {
 }
 
 .input-area button:hover {
-  background: #004080; /* hover in mastec blue */
+  background: #004080;
 }
 
 footer {
