@@ -11,20 +11,27 @@ body {
   margin: 0;
 }
 
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 header {
   display: flex;
+  flex-direction: column; /* stack vertically */
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 header img {
-  height: 50px;
-  margin-right: 12px;
+  height: 36px; /* reduced logo size */
+  margin-bottom: 6px;
 }
 
 header h2 {
-  color: #5fa8d3; /* softer, complementary accent */
-  font-size: 20px;
+  color: #ffffff; /* AI Assistant in white */
+  font-size: 18px; /* smaller and cleaner */
   margin: 0;
 }
 
@@ -32,13 +39,13 @@ header h2 {
   width: 400px;
   height: 500px;
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 14px; /* slightly rounder corners */
   padding: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-top: 6px solid #1a2b4d; /* card blue accent */
+  border-top: 6px solid #1a2b4d; /* dashboard card blue */
 }
 
 #chat-box {
@@ -52,15 +59,16 @@ header h2 {
 
 .message {
   margin: 4px 0;
-  padding: 10px 14px;
+  padding: 8px 12px;
   border-radius: 12px;
   max-width: 75%;
   word-wrap: break-word;
+  font-size: 14px; /* reduced text size */
 }
 
 /* User messages (right side) */
 .message.user {
-  background: linear-gradient(135deg, #004080, #0059b3); /* subtle gradient */
+  background: linear-gradient(135deg, #004080, #0059b3);
   color: #fff;
   align-self: flex-end;
   text-align: right;
@@ -70,7 +78,7 @@ header h2 {
 
 /* Bot messages (left side) */
 .message.bot {
-  background: #dce3f1; /* light slate blue */
+  background: #dce3f1;
   color: #111;
   align-self: flex-start;
   text-align: left;
@@ -88,6 +96,7 @@ header h2 {
   padding: 8px;
   border-radius: 6px;
   border: 1px solid #ccc;
+  font-size: 14px;
 }
 
 .input-area button {
@@ -98,10 +107,11 @@ header h2 {
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s ease;
+  font-size: 14px;
 }
 
 .input-area button:hover {
-  background: #00a3cc; /* aqua hover */
+  background: #004080; /* hover in MasTec blue */
 }
 
 footer {
