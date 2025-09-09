@@ -1,11 +1,13 @@
+let conversationHistory = [];
 let awaitingName = false;
 
 document.addEventListener("DOMContentLoaded", function () {
   const chatBox = document.getElementById("chat-box");
   const botMsg = document.createElement("div");
   botMsg.classList.add("message", "bot");
-  botMsg.textContent = "Hello, how can I help you?";
+  botMsg.textContent = "Welcome to the MasTec AI Assistant. How can I help you today?";
   chatBox.appendChild(botMsg);
+  conversationHistory.push({ role: "assistant", content: botMsg.textContent });
 });
 
 function sendMessage() {
@@ -14,40 +16,42 @@ function sendMessage() {
 
   if (!input.value) return;
 
-  // Add user message bubble
+  // User message
   const userMsg = document.createElement("div");
   userMsg.classList.add("message", "user");
   userMsg.textContent = input.value;
   chatBox.appendChild(userMsg);
+  conversationHistory.push({ role: "user", content: input.value });
 
-  // Generate bot response bubble
+  // Bot reply
   const botMsg = document.createElement("div");
   botMsg.classList.add("message", "bot");
   botMsg.textContent = getMockResponse(input.value);
   chatBox.appendChild(botMsg);
+  conversationHistory.push({ role: "assistant", content: botMsg.textContent });
 
   input.value = "";
-  chatBox.scrollTop = chatBox.scrollHeight; // auto-scroll to bottom
+  chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 function getMockResponse(userInput) {
-  const lowerInput = userInput.toLowerCase();
+  const lower = userInput.toLowerCase();
 
-  if (awaitingName) {
-    awaitingName = false;
-    if (lowerInput === "nicelle alvarez") {
-      return "Sending out daily crew street sheets and monitoring damage complaints.";
-    } else if (lowerInput === "joshua guinto") {
-      return "Redlines and closing out projects.";
-    } else {
-      return "Sorry, I don't understand.";
-    }
-  }
-
-  if (lowerInput.includes("what are my tasks")) {
+  if (lower.includes("what are my tasks")) {
     awaitingName = true;
     return "Please send me your full name.";
   }
 
-  return "Sorry, I don't understand.";
+  if (awaitingName) {
+    awaitingName = false;
+    if (lower.includes("nicelle alvarez")) {
+      return "Sending out daily crew street sheets and monitoring damage complaints.";
+    }
+    if (lower.includes("joshua guinto")) {
+      return "Redlines and closing out projects.";
+    }
+    return "Sorry, I don’t have your tasks on record.";
+  }
+
+  return "Sorry, I don’t understand.";
 }
