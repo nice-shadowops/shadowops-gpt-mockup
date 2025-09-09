@@ -20,14 +20,14 @@ function sendMessage() {
   userMsg.textContent = input.value;
   chatBox.appendChild(userMsg);
 
-  // Generate bot response
+  // Generate bot response bubble
   const botMsg = document.createElement("div");
   botMsg.classList.add("message", "bot");
   botMsg.textContent = getMockResponse(input.value);
   chatBox.appendChild(botMsg);
 
   input.value = "";
-  chatBox.scrollTop = chatBox.scrollHeight;
+  chatBox.scrollTop = chatBox.scrollHeight; // auto-scroll to bottom
 }
 
 function getMockResponse(userInput) {
