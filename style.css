@@ -30,10 +30,14 @@ header img {
 }
 
 header h2 {
-  color: #ffffff; /* AI Assistant in white */
-  font-size: 18px; /* smaller and cleaner */
-  margin: 0;
+  color: #1a2b4d;
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-top: 6px;
 }
+
 
 .chat-container {
   width: 400px;
