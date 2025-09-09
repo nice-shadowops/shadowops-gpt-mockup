@@ -1,4 +1,3 @@
-let conversationHistory = [];
 let awaitingName = false;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -7,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
   botMsg.classList.add("message", "bot");
   botMsg.textContent = "Hello, how can I help you?";
   chatBox.appendChild(botMsg);
-  conversationHistory.push({ role: "assistant", content: botMsg.textContent });
 });
 
 function sendMessage() {
@@ -16,19 +14,17 @@ function sendMessage() {
 
   if (!input.value) return;
 
-  // Add user message
+  // Add user message bubble
   const userMsg = document.createElement("div");
   userMsg.classList.add("message", "user");
   userMsg.textContent = input.value;
   chatBox.appendChild(userMsg);
-  conversationHistory.push({ role: "user", content: input.value });
 
-  // Mock AI response
+  // Generate bot response
   const botMsg = document.createElement("div");
   botMsg.classList.add("message", "bot");
   botMsg.textContent = getMockResponse(input.value);
   chatBox.appendChild(botMsg);
-  conversationHistory.push({ role: "assistant", content: botMsg.textContent });
 
   input.value = "";
   chatBox.scrollTop = chatBox.scrollHeight;
