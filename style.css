@@ -1,6 +1,6 @@
 body {
   font-family: "Segoe UI", Tahoma, sans-serif;
-  background: #e6edf5; /* soft blue-gray background to compliment logo */
+  background: #0d1a33; /* dashboard navy */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +26,7 @@ header img {
 }
 
 header h2 {
-  color: #004080; /* deep blue to match logo */
+  color: #ffffff; /* white for contrast */
   font-size: 20px;
   margin: 0;
 }
@@ -37,11 +37,11 @@ header h2 {
   background: #ffffff;
   border-radius: 12px;
   padding: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-top: 5px solid #004080; /* MasTec blue accent bar */
+  border-top: 6px solid #1a2b4d; /* dashboard card blue accent bar */
 }
 
 #chat-box {
@@ -58,14 +58,15 @@ header h2 {
 }
 
 .message.user {
-  background: #004080;
+  background: #004080; /* mastec blue */
   color: #fff;
   align-self: flex-end;
+  text-align: right;
 }
 
 .message.bot {
-  background: #f1f1f1;
-  color: #333;
+  background: #e6eaf2; /* light slate blue tone instead of gray */
+  color: #111;
   align-self: flex-start;
 }
 
@@ -84,19 +85,19 @@ header h2 {
 .input-area button {
   padding: 8px 14px;
   border: none;
-  background: #004080;
+  background: #1a2b4d; /* dashboard card blue */
   color: white;
   border-radius: 6px;
   cursor: pointer;
 }
 
 .input-area button:hover {
-  background: #0059b3;
+  background: #004080; /* hover in mastec blue */
 }
 
 footer {
   margin-top: 12px;
   text-align: center;
   font-size: 12px;
-  color: #555;
+  color: #bbb;
 }
