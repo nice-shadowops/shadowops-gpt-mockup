@@ -1,14 +1,14 @@
 let conversationHistory = [];
 let awaitingName = false;
 
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
   const chatBox = document.getElementById("chat-box");
   const botMsg = document.createElement("div");
   botMsg.classList.add("message", "bot");
   botMsg.textContent = "Hello, how can I help you?";
   chatBox.appendChild(botMsg);
   conversationHistory.push({ role: "assistant", content: botMsg.textContent });
-};
+});
 
 function sendMessage() {
   const input = document.getElementById("user-input");
