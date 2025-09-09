@@ -9,7 +9,8 @@ body {
 }
 
 .chat-container {
-  width: 400px;
+  width: 400px;          /* fixed width */
+  height: 500px;         /* fixed height */
   background: #fff;
   border-radius: 12px;
   padding: 16px;
@@ -20,7 +21,7 @@ body {
 
 #chat-box {
   flex: 1;
-  height: 300px;
+  max-height: 380px;     /* keeps chat area consistent */
   overflow-y: auto;
   border: 1px solid #ddd;
   border-radius: 8px;
