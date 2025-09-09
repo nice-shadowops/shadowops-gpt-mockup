@@ -1,6 +1,6 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #e6edf5; /* soft blue-gray background to compliment logo */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,52 +8,65 @@ body {
   margin: 0;
 }
 
-.chat-container {
-  width: 400px;          /* fixed width */
-  height: 500px;         /* fixed height */
-  background: #fff;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.app-wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+header img {
+  height: 50px;
+  margin-right: 12px;
+}
+
+header h2 {
+  color: #004080; /* deep blue to match logo */
+  font-size: 20px;
+  margin: 0;
+}
+
+.chat-container {
+  width: 400px;
+  height: 500px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 5px solid #004080; /* MasTec blue accent bar */
 }
 
 #chat-box {
-  flex: 1;
-  max-height: 380px;     /* keeps chat area consistent */
+  flex-grow: 1;
   overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
   margin-bottom: 10px;
-  background: #fafafa;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
 }
 
 .message {
   margin: 6px 0;
-  max-width: 75%;
-  padding: 10px 14px;
-  border-radius: 16px;
-  line-height: 1.4;
-  word-wrap: break-word;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 80%;
 }
 
-.user {
-  background: #1a73e8;
+.message.user {
+  background: #004080;
   color: #fff;
   align-self: flex-end;
-  border-bottom-right-radius: 0;
 }
 
-.bot {
-  background: #e5e5ea;
-  color: #000;
+.message.bot {
+  background: #f1f1f1;
+  color: #333;
   align-self: flex-start;
-  border-bottom-left-radius: 0;
 }
 
 .input-area {
@@ -61,9 +74,29 @@ body {
   gap: 6px;
 }
 
-#user-input {
+.input-area input {
   flex: 1;
   padding: 8px;
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid #ccc;
+}
+
+.input-area button {
+  padding: 8px 14px;
+  border: none;
+  background: #004080;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.input-area button:hover {
+  background: #0059b3;
+}
+
+footer {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 12px;
+  color: #555;
 }
